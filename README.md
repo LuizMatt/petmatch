@@ -1,12 +1,58 @@
-# React + Vite
+# 🐾 Bem-vindo ao PetMach!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Um sistema feito com muito carinho para conectar animais que precisam de um lar com pessoas que desejam dar amor.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Sobre o projeto
 
-## Expanding the ESLint configuration
+O **PetMach!** é um sistema de adoção de animais que tem como principal objetivo facilitar o processo de adoção de cães, gatos e outros pets. Nosso foco é **refatorar o amor com pets**, oferecendo uma plataforma intuitiva, transparente e eficiente para ONGs, protetores e adotantes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖼️ <3
+
+<img src="assets/readme.png" alt="Diagrama UML" width="400" height="400"/>
+
+---
+
+## 🚀 Funcionalidades principais
+
+- 📋 Cadastro de animais disponíveis para adoção
+- 🔍 Filtro por tipo, porte, idade e localização
+- ❤️ Sistema de favoritos para pets
+- 📨 Contato entre adotante e responsável
+- 👥 Perfis de adotantes e protetores
+- 📊 Dashboard para controle das adoções
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- **Frontend:** React.js + VITE
+- **Backend:** Typescript / Express
+- **Banco de Dados:** Postgresql
+- **Design:** Figma
+- **Versionamento:** Git & GitHub
+
+---
+
+## 📦 Como rodar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/LuizMatt/petmatch.git
+
+# Acesse a pasta
+cd petmach
+
+# Instale as dependências (frontend)
+cd client
+npm install
+
+cd api
+npm install
+
+# Inicie o servidor (back + front)
+
+npm run dev

@@ -1,0 +1,42 @@
+{
+  "name": "api-petmathc",
+  "version": "1.0.0",
+  "description": "Voltada as principais apis do petmatch/futuramente micross",
+  "main": "server.js",
+  "scripts": {
+    "test": "_test",
+    "dev": "ts-node-dev --respawan src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuizMatt/petmatch.git"
+  },
+  "keywords": [
+    "petlovers"
+  ],
+  "author": "Luiz Matheus e Hyago Gabriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuizMatt/petmatch/issues"
+  },
+  "homepage": "https://github.com/LuizMatt/petmatch#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.14.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}

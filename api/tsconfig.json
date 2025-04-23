@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "rootDir": "./src",   //onde compila
+    "outDir": "./dist",    //onde ele roda tudo, pq ele nao roda em ts, ele roda em javascript
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

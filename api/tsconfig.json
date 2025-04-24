@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "rootDir": "./src",   //onde compila
-    "outDir": "./dist",    //onde ele roda tudo, pq ele nao roda em ts, ele roda em javascript
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "target": "ES2020",                  
+    "module": "CommonJS",                
+    "rootDir": "src",                   
+    "outDir": "dist",                    
+    "strict": true,                    
+    "esModuleInterop": true,             
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",          
+    "skipLibCheck": true,               
+    "resolveJsonModule": true,           
+    "noImplicitAny": true,               
+    "types": ["node"]                    
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

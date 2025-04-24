@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "_test",
-    "dev": "ts-node-dev --respawan src/server.ts",
+    "dev": "ts-node-dev --respawn src/server.ts",
     "start": "node dist/server.js"
   },
   "repository": {
@@ -26,7 +26,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.15.5",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -34,6 +36,7 @@
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.14.1",
+    "@types/sequelize": "^4.28.20",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",

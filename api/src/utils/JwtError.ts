@@ -4,7 +4,7 @@ export class JwtError extends Error {
     constructor(message: string = 'JWT Error', token?: string) {
       super(message);
       if(!token){
-        throw new Error(``);
+        throw new Error(`Invalid Token`);
       }
       this.name = 'JwtError';
       this.token = token;

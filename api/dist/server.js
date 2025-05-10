@@ -5,12 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-require("dotenv/config");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 const Database_1 = require("./config/database/Database");
 const PORT = process.env.PORT;
 const url = process.env.FRONT;
 const hop = process.env.HOPPSCOTCH;
 const app = (0, express_1.default)();
+const AuthRoutes_1 = __importDefault(require("./routes/AuthRoutes"));
+const AnimalRoutes_1 = __importDefault(require("./routes/AnimalRoutes"));
 app.use(express_1.default.json());
 let allDomains = [url, hop];
 const corsOptions = {
@@ -25,6 +28,8 @@ const corsOptions = {
     credentials: true,
 };
 app.use((0, cors_1.default)(corsOptions));
+app.use("/api/user/auth", AuthRoutes_1.default);
+app.use("/api/user", AnimalRoutes_1.default);
 app.get("/", (req, res) => {
     try {
         console.log(`Rota funcionando!!`);

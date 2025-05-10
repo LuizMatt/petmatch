@@ -1,9 +1,9 @@
-import { Auth } from "../interfaces/AuthInterface";
+import { Auth as AuthInterface} from "../interfaces/AuthInterface";
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database/Database";
 import { v4 as uuidv4 } from 'uuid'; 
 
-Auth.init({
+AuthInterface.init({
     id: {
         type: DataTypes.UUID, 
         allowNull: false,
@@ -21,10 +21,12 @@ Auth.init({
     cpf: {
         type: DataTypes.STRING(14),
         allowNull: false,
+        unique: true,
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
     },
     password:{
         type: DataTypes.STRING,
@@ -43,4 +45,4 @@ Auth.init({
     underscored: true, 
 });
 
-export default Auth;
+export default AuthInterface;

@@ -1,4 +1,5 @@
 import  Auth  from "../models/AuthModel";
+import AuthInterface from "../models/AuthModel";
 import { AuthCreationAttributes,AuthAttributes } from "../interfaces/AuthInterface";
 import bcrypt from 'bcryptjs';
 import { ErrorMissingContent } from "../utils/ErrorMissingContent";
@@ -81,7 +82,7 @@ getUserByEmail: async(email: string )=>{
         if(!email || email === null){
             console.error(`Please insert the Email`);
         }
-        const mail = await Auth.findAll({where: {email: email}});
+        const mail = await Auth.findOne({where: {email: email}});
         return mail;
     }catch(err){
         if(err instanceof Error){

@@ -1,4 +1,15 @@
-export const databaseURL = process.env.DATABASE_URL as string;
-export const PORT = process.env.PORT;
-export const jwt_Secret = process.env.JWT_SECRET as string;
-export const jwt_expires = process.env.JWT_EXPIRES as string;
+import { cleanEnv, str } from 'envalid';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const env = cleanEnv(process.env, {
+    JWT_SECRET: str(),
+    JWT_EXPIRES: str({ default: '1h' }), 
+    DATABASE_URL: str(),
+    PORT: str({ default: '5000' })
+});
+
+export const databaseURL = env.DATABASE_URL;
+export const PORT = env.PORT;
+export const jwt_Secret = env.JWT_SECRET;
+export const jwt_expires = env.JWT_EXPIRES; 

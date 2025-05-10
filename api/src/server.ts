@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
+import dotenv from 'dotenv';
+dotenv.config();
 import  {startConnectionDatabase}  from "./config/database/Database";
 const PORT = process.env.PORT;
 const url = process.env.FRONT;
 const hop = process.env.HOPPSCOTCH;
 const app = express();
+import AuthRoutes from './routes/AuthRoutes';
+import AnimalRoutes from './routes/AnimalRoutes';
 
 app.use(express.json());
 
@@ -22,6 +25,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+app.use("/api/user/auth", AuthRoutes);
+app.use("/api/user", AnimalRoutes);
+
 app.get("/", (req, res) => {
   try {
     console.log(`Rota funcionando!!`);

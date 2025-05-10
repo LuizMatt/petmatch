@@ -22,10 +22,12 @@ AuthInterface_1.Auth.init({
     cpf: {
         type: sequelize_1.DataTypes.STRING(14),
         allowNull: false,
+        unique: true,
     },
     email: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false,
+        unique: true,
     },
     password: {
         type: sequelize_1.DataTypes.STRING,

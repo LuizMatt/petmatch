@@ -23,12 +23,12 @@ AnimalModel.init({
 
      },
         size: {
-            type: DataTypes.ENUM,
+            type: DataTypes.ENUM('GRANDE', 'MEDIO', 'PEQUENO'),
             allowNull: false,
         },
         
         animal: {
-            type: DataTypes.ENUM,
+            type: DataTypes.ENUM('CACHORRO', 'GATO', 'CAGADO'),
             allowNull: false,
         },
 

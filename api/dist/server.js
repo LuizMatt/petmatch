@@ -29,7 +29,7 @@ const corsOptions = {
 };
 app.use((0, cors_1.default)(corsOptions));
 app.use("/api/user/auth", AuthRoutes_1.default);
-app.use("/api/user", AnimalRoutes_1.default);
+app.use("/api/user/animal", AnimalRoutes_1.default);
 app.get("/", (req, res) => {
     try {
         console.log(`Rota funcionando!!`);

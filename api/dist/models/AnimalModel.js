@@ -3,13 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const AnimalInterface_1 = require("../interfaces/AnimalInterface");
 const Database_1 = require("../config/database/Database");
 const sequelize_1 = require("sequelize");
-const uuid_1 = require("uuid");
 AnimalInterface_1.Animal.init({
     id: {
         type: sequelize_1.DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: uuid_1.v4,
+        defaultValue: sequelize_1.DataTypes.UUIDV4,
     },
     name: {
         type: sequelize_1.DataTypes.STRING,
@@ -20,11 +19,11 @@ AnimalInterface_1.Animal.init({
         allowNull: false
     },
     size: {
-        type: sequelize_1.DataTypes.ENUM,
+        type: sequelize_1.DataTypes.ENUM('GRANDE', 'MEDIO', 'PEQUENO'),
         allowNull: false,
     },
     animal: {
-        type: sequelize_1.DataTypes.ENUM,
+        type: sequelize_1.DataTypes.ENUM('CACHORRO', 'GATO', 'CAGADO'),
         allowNull: false,
     },
 }, { sequelize: Database_1.sequelize,

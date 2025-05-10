@@ -1,14 +1,14 @@
 import { Auth as AuthInterface} from "../interfaces/AuthInterface";
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database/Database";
-import { v4 as uuidv4 } from 'uuid'; 
 
 AuthInterface.init({
     id: {
         type: DataTypes.UUID, 
         allowNull: false,
         primaryKey: true,
-        defaultValue: uuidv4,
+        defaultValue: DataTypes.UUIDV4,
+
     },
     name: {
         type: DataTypes.STRING,

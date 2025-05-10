@@ -28,8 +28,8 @@ createUser : async(body: AuthCreationAttributes)=>{
         const salt = await bcrypt.genSalt(10);
         const passwordEncripted = await bcrypt.hash(body.password, salt);
         body.password = passwordEncripted;
-        const user = Auth.create(body);
-        (await user).save();
+        const user = await Auth.create(body);
+        
         console.log(`User created: ${user}`)
         return user;
     }catch(err){

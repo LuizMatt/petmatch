@@ -28,8 +28,7 @@ exports.authService = {
             const salt = await bcryptjs_1.default.genSalt(10);
             const passwordEncripted = await bcryptjs_1.default.hash(body.password, salt);
             body.password = passwordEncripted;
-            const user = AuthModel_1.default.create(body);
-            (await user).save();
+            const user = await AuthModel_1.default.create(body);
             console.log(`User created: ${user}`);
             return user;
         }

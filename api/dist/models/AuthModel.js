@@ -3,13 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const AuthInterface_1 = require("../interfaces/AuthInterface");
 const sequelize_1 = require("sequelize");
 const Database_1 = require("../config/database/Database");
-const uuid_1 = require("uuid");
 AuthInterface_1.Auth.init({
     id: {
         type: sequelize_1.DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: uuid_1.v4,
+        defaultValue: sequelize_1.DataTypes.UUIDV4,
     },
     name: {
         type: sequelize_1.DataTypes.STRING,

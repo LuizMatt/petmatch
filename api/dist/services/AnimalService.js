@@ -17,7 +17,7 @@ exports.AnimalService = {
             if (!body) {
                 throw new ErrorMissingContent_1.ErrorMissingContent();
             }
-            const animal = AnimalModel_1.default.create(body);
+            const animal = await AnimalModel_1.default.create(body);
             if (!animal) {
                 throw new CreateError_1.FailedOnCreate();
             }

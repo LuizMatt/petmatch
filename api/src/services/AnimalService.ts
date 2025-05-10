@@ -15,7 +15,7 @@ export const AnimalService = {
             if(!body){
                 throw new ErrorMissingContent();
             }
-            const animal = AnimalModel.create(body);
+            const animal = await AnimalModel.create(body);
             if(!animal){
                 throw new FailedOnCreate();
             }

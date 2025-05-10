@@ -1,7 +1,6 @@
 import { Animal as AnimalModel } from "../interfaces/AnimalInterface";
 import { sequelize}from "../config/database/Database";
 import { DataTypes } from "sequelize";
-import { v4 as uuidv4 } from 'uuid'; 
 
 
 AnimalModel.init({
@@ -9,7 +8,7 @@ AnimalModel.init({
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: uuidv4,
+        defaultValue: DataTypes.UUIDV4,
 
     },
     name:{

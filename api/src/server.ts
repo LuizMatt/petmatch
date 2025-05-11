@@ -9,7 +9,8 @@ const hop = process.env.HOPPSCOTCH;
 const app = express();
 import AuthRoutes from './routes/AuthRoutes';
 import AnimalRoutes from './routes/AnimalRoutes';
-
+import ContatoRoutes from './routes/ContatoRoute';
+ 
 app.use(express.json());
 
 let allDomains = [url, hop];
@@ -28,6 +29,8 @@ app.use(cors(corsOptions));
 
 app.use("/api/user/auth", AuthRoutes);
 app.use("/api/user/animal", AnimalRoutes);
+app.use("/api/user/contato", ContatoRoutes);
+
 
 app.get("/", (req, res) => {
   try {

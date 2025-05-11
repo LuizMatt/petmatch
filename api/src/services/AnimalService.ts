@@ -54,6 +54,11 @@ export const AnimalService = {
         if(id === null || !id){
             throw new UUIDNotFoundError();
         }
+        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+        if (!uuidRegex.test(id)) {
+            console.error(`Invalid UUID format`);
+            return;
+        }
         const animalById = await AnimalModel.findOne({where: {id:id}});
         if(!animalById){
             throw new NotFound();
@@ -78,6 +83,11 @@ export const AnimalService = {
             if(!animalId){
                 throw new NotFound();
             }
+            const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+            if (!uuidRegex.test(id)) {
+                console.error(`Invalid UUID format`);
+                return;
+            }
             const [animalUpdate] = await AnimalModel.update(body, {where: {id:id}});
             console.log(`Animal Update: 
                 ${animalId?.dataValues}`);
@@ -99,6 +109,11 @@ export const AnimalService = {
             const animalId = await AnimalService.getAnimalById(id);
             if(!animalId){
                 throw new NotFound();
+            }
+            const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+            if (!uuidRegex.test(id)) {
+                console.error(`Invalid UUID format`);
+                return;
             }
             const animalDeleted = await AnimalModel.destroy({where : {id: id}});
             console.log(`Animal Deleted: ${animalId?.dataValues}`);

@@ -39,6 +39,7 @@ class AuthController {
                 res.status(201).json({
                     success: true,
                     message: "User created successfully.",
+                    userRegister,
                     token
                 });
             }

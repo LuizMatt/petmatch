@@ -9,6 +9,9 @@ import { ErrorMissingContent } from "../utils/ErrorMissingContent";
 import { jwt_Secret} from "../utils/baseurl/BaseUrll";
 
 let success: boolean = false;
+
+
+
 export class AuthController {
     constructor() {}
 
